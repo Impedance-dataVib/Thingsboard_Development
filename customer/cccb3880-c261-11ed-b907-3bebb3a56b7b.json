@@ -1,0 +1,68 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : null,
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : null,
+    "customerId" : null,
+    "email" : "Milaha@gmail.com",
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "cccb3880-c261-11ed-b907-3bebb3a56b7b"
+    },
+    "name" : "Milaha",
+    "ownerId" : null,
+    "parentCustomerId" : null,
+    "phone" : null,
+    "state" : null,
+    "title" : "Milaha",
+    "zip" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "TENANT",
+      "id" : "9c28c0b0-b106-11ed-a5f7-cdf9aa24320a"
+    },
+    "to" : {
+      "entityType" : "CUSTOMER",
+      "id" : "cccb3880-c261-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "cccb3880-c261-11ed-b907-3bebb3a56b7b"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "ee497080-c261-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : 19.100858256975833,
+      "jsonValue" : null,
+      "key" : "lat",
+      "lastUpdateTs" : 1679036869698,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 73.02516173687765,
+      "jsonValue" : null,
+      "key" : "long",
+      "lastUpdateTs" : 1679036869698,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

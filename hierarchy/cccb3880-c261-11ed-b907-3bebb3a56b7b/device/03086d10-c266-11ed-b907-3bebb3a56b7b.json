@@ -1,0 +1,90 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "cccb3880-c261-11ed-b907-3bebb3a56b7b"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "b5adad70-bc05-11ed-b907-3bebb3a56b7b"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "03086d10-c266-11ed-b907-3bebb3a56b7b"
+    },
+    "label" : "vibox stbd",
+    "name" : "cccb3880-c261-11ed-b907-3bebb3a56b7b_vibox",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "cccb3880-c261-11ed-b907-3bebb3a56b7b"
+    },
+    "softwareId" : null,
+    "type" : "vBox-Core Engine"
+  },
+  "credentials" : {
+    "credentialsId" : "eWg6Qp9lSSC6CJxC6xrF",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "ea24f750-c265-11ed-b907-3bebb3a56b7b"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "03086d10-c266-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1681896004634,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1681896004635,
+      "longValue" : 1681896004634,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1678797891202,
+      "longValue" : 300000,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1681895687866,
+      "longValue" : 1681895687173,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

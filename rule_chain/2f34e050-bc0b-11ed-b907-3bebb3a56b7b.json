@@ -1,0 +1,399 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "2f42c300-bc0b-11ed-b907-3bebb3a56b7b"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "2f34e050-bc0b-11ed-b907-3bebb3a56b7b"
+    },
+    "name" : "vBox-Core Engine",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 1,
+      "toIndex" : 0,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 11,
+      "type" : "Post telemetry"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "False"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 7,
+      "type" : "True"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 9,
+      "type" : "True"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 10,
+      "type" : "False"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 12,
+      "type" : "Created"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 12,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 12,
+      "type" : "False"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 12,
+      "type" : "Updated"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 12,
+      "type" : "Cleared"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 12,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 12,
+      "type" : "False"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 3,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 2,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1589,
+        "layoutY" : 158
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "skipLatestPersistence" : false,
+        "useServerTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2f3f4090-bc0b-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "saveToEngine",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1249,
+        "layoutY" : 153
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : true,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET", "DEVICE" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2f4274e0-bc0b-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "changeToEngine",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 278,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2f42c300-bc0b-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "checkType",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 939,
+        "layoutY" : 154
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var dateTime = Object.keys(msg)[0];\nmsg = msg[dateTime];\nvar dateTimeParts=dateTime.split(\" \");\nvar dateParts = dateTimeParts[0].split(\"-\");\nvar timeParts = dateTimeParts[1].split(\":\");\nvar formattedDate = new Date(parseInt(dateParts[0]), parseInt(dateParts[1]) - 1, parseInt(dateParts[2]), parseInt(timeParts[0]), parseInt(timeParts[1]), 0);\n// metadata[\"ts\"]=formattedDate.getTime()\nmsg[\"DateTime\"]=timeParts.toString()\nmetadata[\"ts\"]=formattedDate.getTime()\n\nvar newmsg = {}\nfor (var mainKey in msg) {\n    if ((typeof msg[mainKey] == \"string\" || typeof msg[\n            mainKey] == \"number\") && mainKey !=\n        \"DateAndTime\") {\n        newmsg[mainKey] = msg[mainKey]\n    } else if (typeof msg[mainKey] == \"object\") {\n        if (msg[mainKey] != null) {\n            for (var subKey in msg[mainKey]) {\n                if (msg[mainKey][subKey] == undefined) {\n                    msg[mainKey][subKey] = {}\n                }\n                if (typeof msg[mainKey][subKey] ==\n                    \"string\" || typeof msg[mainKey][\n                    subKey] == \"number\") {\n                    if(subKey==\"valueInPercent\"){\n                        newmsg[mainKey + \"_\" + subKey] = 100-msg[mainKey][subKey]\n                    }\n                    else{\n                        newmsg[mainKey + \"_\" + subKey] = msg[mainKey][subKey]\n\n                    }\n                        \n                } else if (typeof msg[mainKey][subKey] ==\n                    \"object\" && Array.isArray(msg[mainKey][\n                        subKey\n                    ])) {\n                    for (var cyl in msg[mainKey][subKey]) {\n                        if(newmsg[\"Engine_FiringOrder_\"+cyl]!=undefined){\n                            newmsg[mainKey + \"_\" + subKey +\n                                \"_\" + newmsg[\"Engine_FiringOrder_\"+cyl]] = 100 - msg[mainKey][\n                                subKey\n                            ][cyl]\n                            \n                            \n                        }\n                        else{\n                            newmsg[mainKey + \"_\" + subKey +\n                                \"_\" + cyl] = 100- msg[mainKey][\n                                subKey\n                            ][cyl]\n                            \n                        }\n                    }\n\n                }\n            }\n\n        }\n    }\n}\n\nmsg = newmsg\n\nreturn {\n    msg: msg,\n    metadata: metadata,\n    msgType: msgType\n};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "d51d2580-bc0c-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "convertJSONToTB",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1468,
+        "layoutY" : 313
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : false,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "coreEquipmentConseqAlertsCount", "mechHealth", "thresholdWarning", "thresholdCritical", "operatingHealth", "thresholdFuelLoss" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e2a61280-c6dd-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "getData",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1793,
+        "layoutY" : 314
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "if(metadata[\"ss_coreEquipmentConseqAlertsCount\"]==undefined){\n    metadata[\"ss_coreEquipmentConseqAlertsCount\"]=0;\n}\n\n\nif(msg[\"MechanicalHealth_value\"]<metadata[\"ss_mechHealth\"] || msg[\"PowerLoss_value\"]<metadata[\"ss_thresholdFuelLoss\"] || msg[\"EngineEfficiency_value\"]<metadata[\"ss_operatingHealth\"]){\n    metadata[\"ss_coreEquipmentConseqAlertsCount\"]=parseInt(metadata[\"ss_coreEquipmentConseqAlertsCount\"])+1\n    if(parseInt(metadata[\"ss_coreEquipmentConseqAlertsCount\"])>=parseInt(metadata[\"ss_thresholdCritical\"])){\n        metadata[\"coreAlert\"]=true;    \n        metadata[\"severity\"]=\"CRITICAL\"\n    }\n    else if(parseInt(metadata[\"ss_coreEquipmentConseqAlertsCount\"])>=parseInt(metadata[\"ss_thresholdWarning\"])){\n        metadata[\"coreAlert\"]=true;    \n        metadata[\"severity\"]=\"WARNING\"\n    }\n}\nelse{\n    metadata[\"ss_coreEquipmentConseqAlertsCount\"]=0\n}\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e2a687b0-c6dd-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "checkForAlert",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2160,
+        "layoutY" : 316
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return msg.temperature > 20;",
+        "tbelScript" : "return metadata.coreAlert==true;"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "8b358d70-c6e0-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "checkIfCoreAlert",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2154,
+        "layoutY" : 443
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "msg={}\nmsg[\"coreEquipmentConseqAlertsCount\"]=metadata[\"ss_coreEquipmentConseqAlertsCount\"]\nreturn {msg: msg, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ba30fce0-c6e0-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "storeConsequenceALert",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2512,
+        "layoutY" : 526
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ec794d60-c6e0-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "save",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2482,
+        "layoutY" : 194
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\ndetails.lastUpdatedOn=metadata[\"ts\"]\ndetails[\"thresholds\"]={\n    mechHealth:metadata.ss_mechHealth,\n    operatingHealth:metadata.ss_operatingHealth,\n    thresholdFuelLoss:metadata.ss_thresholdFuelLoss\n}\ndetails[\"currentValue\"]={\n    mechHealth:msg[\"MechanicalHealth_value\"],\n    powerLoss:msg[\"PowerLoss_value\"],\n    engineEfficiency:msg[\"EngineEfficiency_value\"]\n}\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "Core Alert",
+        "severity" : "${severity}",
+        "propagate" : true,
+        "relationTypes" : [ ],
+        "propagateToOwner" : true,
+        "propagateToOwnerHierarchy" : true,
+        "propagateToTenant" : true,
+        "dynamicSeverity" : true
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "31a68010-c6e1-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "createAlarm",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2487,
+        "layoutY" : 343
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmType" : "Core Alert"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "31a6f540-c6e1-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "clearCore Alarm",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 594,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "queueName" : "SequentialByOriginator"
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "28a33930-c6fb-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "sync",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.flow.TbCheckpointNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 2811,
+        "layoutY" : 288
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "28a38750-c6fb-11ed-b907-3bebb3a56b7b"
+      },
+      "name" : "ack",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.flow.TbAckNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

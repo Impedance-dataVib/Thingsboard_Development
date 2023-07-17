@@ -1,0 +1,82 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "9ba0ea30-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "9ba3d060-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "label" : "Gear box oil",
+    "name" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b_GearBox-Oil",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "softwareId" : null,
+    "type" : "Oil Condition Sensor"
+  },
+  "credentials" : {
+    "credentialsId" : "SbOc6E01qbtxMeP5r0Im",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "80049600-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "9ba3d060-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1679979152159,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1677567296795,
+      "longValue" : 1677567296794,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1677567209669,
+      "longValue" : 60000,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

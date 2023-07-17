@@ -1,0 +1,756 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "description" : "",
+      "widgets" : {
+        "f134276d-4cbf-e83f-181a-29ebe792f3c6" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1677128319730,
+                  "endTimeMs" : 1677214719730
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "enableSearch" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "displayEntityName" : true,
+              "displayEntityType" : true,
+              "enableSelectColumnDisplay" : false,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityLabel" : false,
+              "useRowStyleFunction" : false,
+              "entitiesTitle" : "Customers"
+            },
+            "title" : "New Entities table",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "5403dd0f-7cfc-c4b7-00d7-1d68c5137977",
+              "filterId" : null,
+              "dataKeys" : [ ]
+            } ],
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "Add",
+                "icon" : "add",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "\n<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Add Apartment</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n            <mat-form-field fxFlex class=\"mat-block\">\n                <mat-label>Customer Title</mat-label>\n                <input matInput formControlName=\"title\" required>\n                <mat-error *ngIf=\"addEntityFormGroup.get('title').hasError('required')\">\n                    Customer Title is required.\n                </mat-error>\n            </mat-form-field>\n        </div>\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n            <mat-form-field fxFlex class=\"mat-block\">\n                <mat-label>Customer Email</mat-label>\n                <input matInput formControlName=\"email\" required>\n                <mat-error *ngIf=\"addEntityFormGroup.get('email').hasError('required')\">\n                    Customer Email is required.\n                </mat-error>\n            </mat-form-field>\n        \n        </div>\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n            <div id='mapContainer'></div>\n        </div>\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancel\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Add\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "\n#mapContainer { height: 400px; \n    width: 400px;\n}",
+                "customFunction" : "console.log(widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap\n    .get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap\n    .get('assetService'));\nlet customerService = $injector.get(widgetContext.servicesMap\n    .get('customerService'));\nlet deviceService = $injector.get(widgetContext.servicesMap\n    .get('deviceService'));\nlet attributeService = $injector.get(widgetContext\n    .servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext\n    .servicesMap.get('entityRelationService'));\nlet entityGroupService = $injector.get(widgetContext\n    .servicesMap.get('entityGroupService'));\nlet userService = $injector.get(widgetContext\n    .servicesMap.get('userService'));\n\nopenAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate,\n        AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.users = [];\n\n    vm.addEntityFormGroup = vm.fb.group({\n        email: ['', [vm.validators.required]],\n        title: ['', [vm.validators.required]],\n         attributes: vm.fb.group({\n             lat:[null, [vm.validators.required]],\n             long:[null, [vm.validators.required]]\n         })\n     });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n\n        $(document).ready(function() {\n        vm.mymap = L.map(\"mapContainer\")\n            .setView([19.115554992457728, 73.02786222338501\n                ],\n                13);\n        L.tileLayer(\n            'http://{s}.tile.osm.org/{z}/{x}/{y}.png', {\n                attribution: '&copy; <a href=\"http://osm.org/copyright\">OpenStreetMap</a> contributors'\n            }).addTo(vm.mymap);\n\n        vm.mymap.on('click', function(e) {\n\n            var lat = (e.latlng.lat);\n            var lng = (e.latlng.lng);\n            if (vm.marker == null) {\n                vm.marker = L.marker([lat,\n                    lng\n                ], {\n                    icon: vm\n                        .markerIcon\n                }).addTo(vm.mymap);\n\n            } else {\n                var newLatLng = new L\n                    .LatLng(lat, lng);\n                vm.marker.setLatLng(\n                    newLatLng);\n\n            }\n            console.log(vm.addEntityFormGroup.controls.attributes)\n            vm.addEntityFormGroup.controls.attributes.controls.lat.patchValue(lat, {\n                            emitEvent: true\n                        });\n            vm.addEntityFormGroup.controls.attributes.controls.long.patchValue(lng, {\n                            emitEvent: true\n                        });\n\n\n        });\n        });\n\n\n    vm.save = function() {\n\n        vm.addEntityFormGroup.markAsPristine();\n        const formValues = vm.addEntityFormGroup.value;\n        let customer = {\n        \"title\": formValues.title,\n        \"name\": formValues.title,\n        \"email\": formValues.email,\n        };\n        \n        \n        widgetContext.rxjs.forkJoin([customerService.saveCustomer(customer)\n            ]).subscribe(function(cusResult){\n                console.log(\"cusResult: \",cusResult)\n                    let custUser = {\n                        \"title\": formValues.title,\n                        \"name\": formValues.title,\n                        \"additionalInfo\": {\n                        \"description\": \"\",\n                            \"defaultDashboardId\": \"cbe104a0-3d90-11ed-bfff-cfbfbd512a91\",\n                            \"defaultDashboardFullscreen\": true\n                        },\n                        \"email\": formValues.email,\n                        \"authority\": \"CUSTOMER_USER\",\n                        \"customerId\": cusResult[0].id,\n                        \"ownerId\": cusResult[0].id\n                    };//\tSelf Registration Users\n                    widgetContext.rxjs.forkJoin([\n                        // widgetContext.entityGroupService.saveEntityGroup({\"name\":\"Customer Users\",\"additionalInfo\":{\"description\":\"\"},\"type\":\"USER\",\"ownerId\":cusResult[0].id}),\n                        widgetContext.http.get(\"/api/entityGroups/CUSTOMER/\"+cusResult[0].id.id+\"/USER\"),\n                        // entityGroupService.addEntityToEntityGroup(\"b17534b0-331d-11ed-aea7-a3a5a9b95115\",cusResult[0].id.id),\n                        userService.saveUser(custUser,true),\n                        saveAttributes(cusResult[0].id),\n                        ]).subscribe(function(result){\n\n                            var userGroup=result[0].find(e=>e.name==\"Customer Users\")\n                            rxjs.forkJoin(entityGroupService.addEntityToEntityGroup(userGroup.id.id,result[1].id.id)).subscribe(function(userSaveResponse){\n                                widgetContext.showToast('success','Customer Added',1000,'top','left');\n                                widgetContext.updateAliases();\n                                vm.dialogRef.close(null);\n                            })\n                })\n            \n                \n            })\n\n\n\n    };\n\n    function saveAttributes(entityId) {\n        let attributes = vm.addEntityFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            if(attributes[key] !== null) {\n                attributesArray.push({key: key, value: attributes[key]});\n            }\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributesArray);\n        }\n        return widgetContext.rxjs.of([]);\n    }\n    \n    vm.markerIcon = L.icon({\n        iconSize: [25, 25], // size of the icon\n        iconAnchor: [12.5, 25],\n        iconUrl: \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/hAytodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjM3RDEwMkREMDEyMTFFNzkwMEZGRUNFMTk3OTNCRUEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjM3RDEwMkVEMDEyMTFFNzkwMEZGRUNFMTk3OTNCRUEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2MzdEMTAyQkQwMTIxMUU3OTAwRkZFQ0UxOTc5M0JFQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2MzdEMTAyQ0QwMTIxMUU3OTAwRkZFQ0UxOTc5M0JFQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/bAEMAAwICAgICAwICAgMDAwMEBgQEBAQECAYGBQYJCAoKCQgJCQoM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\",\n        popupAnchor: [0, -\n            30\n        ] // point from which the popup should open relative to the iconAnchor\n\n    });\n}",
+                "customResources" : [ {
+                  "url" : "https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"
+                } ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "9260fb39-8d75-9ec5-c54d-0ab4921cb008"
+              }, {
+                "name" : "Refresh",
+                "icon" : "refresh",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "widgetContext.updateAliases();",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "a9269693-fcf8-19ea-599a-1ada06db31d3"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Delete",
+                "icon" : "delete",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet customerService = $injector.get(widgetContext.servicesMap.get('customerService'));\n\nopenDeleteEntityDialog();\n\nfunction openDeleteEntityDialog() {\n    let title = 'Delete ' + entityId.entityType.toLowerCase() + ' ' +\n                entityName;\n    let content = 'Are you sure you want to delete the ' +\n                 entityId.entityType.toLowerCase() + ' ' + entityName + '?';\n    dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(\n        function(result) {\n            if (result) {\n                deleteEntity();\n            }\n        }\n    );\n}\n\nfunction deleteEntity() {\n    deleteEntityObservable(entityId).subscribe(\n        function success() {\n            widgetContext.updateAliases();\n        },\n        function fail() {\n            showErrorDialog();\n        }\n    );\n}\n\nfunction deleteEntityObservable(entityId) {\n    if (entityId.entityType == \"ASSET\") {\n        return assetService.deleteAsset(entityId.id);\n    } else if (entityId.entityType == \"DEVICE\") {\n        return deviceService.deleteDevice(entityId.id);\n    }else if (entityId.entityType == \"CUSTOMER\"){\n        return customerService.deleteCustomer(entityId.id)\n    }\n}\n\nfunction showErrorDialog() {\n    let title = 'Error';\n    let content = 'An error occurred while deleting the entity. Please try again.';\n    dialogs.alert(title, content, 'CLOSE').subscribe(\n        function(result) {}\n    );\n}\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "7db3b5e0-15a6-f57b-3337-1a1020936ff1"
+              }, {
+                "name" : "Login As User",
+                "icon" : "login",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : null,
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "130c5eff-1adc-327b-be77-202fb49dcbe2"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f134276d-4cbf-e83f-181a-29ebe792f3c6"
+        },
+        "b3ea2744-26a3-b2b9-5b62-dbfce882db65" : {
+          "isSystemType" : true,
+          "bundleAlias" : "maps_v2",
+          "typeAlias" : "openstreetmap",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8.5,
+          "sizeY" : 6,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "5403dd0f-7cfc-c4b7-00d7-1d68c5137977",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "lat",
+                "type" : "attribute",
+                "label" : "lat",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.6293089848533877
+              }, {
+                "name" : "long",
+                "type" : "attribute",
+                "label" : "long",
+                "color" : "#4caf50",
+                "settings" : { },
+                "_hash" : 0.8388107364310988
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1677128319730,
+                  "endTimeMs" : 1677214719730
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "fitMapBounds" : true,
+              "latKeyName" : "lat",
+              "lngKeyName" : "long",
+              "showLabel" : true,
+              "label" : "${entityName}",
+              "tooltipPattern" : "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Temperature:</b> ${temperature} °C<br/><small>See advanced settings for details</small>",
+              "markerImageSize" : 34,
+              "useColorFunction" : true,
+              "markerImages" : [ "data:image/png;base64,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", "data:image/png;base64,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", "data:image/png;base64,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", "data:image/png;base64,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" ],
+              "useMarkerImageFunction" : true,
+              "colorFunction" : "var type = dsData[dsIndex]['Type'];\nif (type == 'colorpin') {\n\tvar temperature = dsData[dsIndex]['temperature'];\n\tif (typeof temperature !== undefined) {\n\t    var percent = (temperature + 60)/120 * 100;\n\t    return tinycolor.mix('blue', 'red', amount = percent).toHexString();\n\t}\n\treturn 'blue';\n}\n",
+              "markerImageFunction" : "var type = dsData[dsIndex]['Type'];\nif (type == 'thermometer') {\n\tvar res = {\n\t    url: images[0],\n\t    size: 40\n\t}\n\tvar temperature = dsData[dsIndex]['temperature'];\n\tif (typeof temperature !== undefined) {\n\t    var percent = (temperature + 60)/120;\n\t    var index = Math.min(3, Math.floor(4 * percent));\n\t    res.url = images[index];\n\t}\n\treturn res;\n}",
+              "color" : "#fe7569",
+              "mapProvider" : "OpenStreetMap.Mapnik",
+              "showTooltip" : true,
+              "autocloseTooltip" : true,
+              "tooltipFunction" : "var deviceType = dsData[dsIndex]['Type'];\r\nif (typeof deviceType !== undefined) {\r\n    if (deviceType == \"energy meter\") {\r\n        return '<b>${entityName}</b><br/><b>Energy:</b> ${energy:2} kWt<br/>';\r\n    } else if (deviceType == \"thermometer\") {\r\n        return '<b>${entityName}</b><br/><b>Temperature:</b> ${temperature:2} °C<br/>';\r\n    }\r\n}",
+              "labelFunction" : "var deviceType = dsData[dsIndex]['Type'];\r\nif (typeof deviceType !== undefined) {\r\n    if (deviceType == \"energy meter\") {\r\n        return '<span style=\"color:orange;\">${entityName}, ${energy:2} kWt</span>';\r\n    } else if (deviceType == \"thermometer\") {\r\n        return '<span style=\"color:blue;\">${entityName}, ${temperature:2} °C</span>';\r\n    }\r\n}",
+              "provider" : "openstreet-map",
+              "defaultCenterPosition" : "0,0",
+              "showTooltipAction" : "click",
+              "mapPageSize" : 16384,
+              "useTooltipFunction" : false,
+              "useCustomProvider" : false,
+              "useDefaultCenterPosition" : false,
+              "draggableMarker" : false,
+              "disableScrollZooming" : false,
+              "disableZoomControl" : false,
+              "useLabelFunction" : false,
+              "tooltipOffsetX" : 0,
+              "tooltipOffsetY" : -1,
+              "markerOffsetX" : 0.5,
+              "markerOffsetY" : 1,
+              "showPolygon" : false,
+              "useClusterMarkers" : false
+            },
+            "title" : "New OpenStreetMap",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : { },
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetCss" : "",
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b3ea2744-26a3-b2b9-5b62-dbfce882db65"
+        },
+        "ef9eabac-9e78-10ae-3351-8833fe789afd" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1677128319730,
+                  "endTimeMs" : 1677214719730
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "enableSearch" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "displayEntityName" : true,
+              "displayEntityType" : true,
+              "enableSelectColumnDisplay" : false,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityLabel" : false,
+              "useRowStyleFunction" : false,
+              "entitiesTitle" : "Ships"
+            },
+            "title" : "New Entities table",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "4f74ead6-36ba-0dfe-8890-a3a8b1b8cc81",
+              "filterId" : null,
+              "dataKeys" : [ ]
+            } ],
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "Add",
+                "icon" : "add",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "\n<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Add Apartment</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n                <mat-form-field class=\"mat-block\" fxFlex>\n                    <input matInput type=\"text\" \n                        placeholder=\"Customer\" #entityInput\n                        formControlName=\"customer\"\n                        [matAutocomplete]=\"userAutocomplete\"\n                        (focusin)=\"onCustomerFocus()\">\n                    <mat-autocomplete\n                        class=\"tb-autocomplete\"\n                        [displayWith]=\"displayEntityFn\"\n                        #userAutocomplete=\"matAutocomplete\">\n                        <mat-option\n                            *ngFor=\"let entity of filteredCustomers | async\"\n                            [value]=\"entity\">\n                            <span\n                                [innerHTML]=\"entity.name\"></span>\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n        \n        </div>\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n            <mat-form-field fxFlex>\n                <mat-label>Ship Name</mat-label>\n                <input matInput formControlName=\"shipName\">\n            </mat-form-field>\n        </div>\n        <div style=\"padding:10px 0 10px 0px \" fxLayout=\"row\" fxLayoutGap=\"8px\"\n            fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n            <input matInput type=\"file\" accept=\"image/*\" color=\"primary\"\n                (change)=\"onFloorMapSelect($event)\">\n        </div>\n        <div style=\"margin:auto;padding:0px 0 10px 0px \" fxLayout=\"row\" fxLayoutGap=\"8px\"\n            fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\">\n            <img id=\"floormapPreview\" />\n\n        </div>\n\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancel\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Add\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "\n#floormapPreview{\n    max-height: 100px;\n    max-width: 100px;\n}\ninput[type=\"file\"]::file-selector-button {\n  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);\n  background: #607d8b;\n  box-sizing: border-box;\n  position: relative;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  cursor: pointer;\n  outline: none;\n  border: none;\n  -webkit-tap-highlight-color: transparent;\n  display: inline-block;\n  white-space: nowrap;\n  text-decoration: none;\n  vertical-align: baseline;\n  text-align: center;\n  margin: 0;\n  min-width: 64px;\n  line-height: 36px;\n  padding: 0 16px;\n  border-radius: 4px;\n  overflow: visible;\n  transform: translate3d(0, 0, 0);\n  transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  margin: 1rem;\n  color: white;\n}\n\n\n/*  fallback for older browsers supporting the -webkit prefix */\n\ninput[type=\"file\"]::-webkit-file-upload-button {\n  color: white;\n  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);\n  background: #607d8b;\n  box-sizing: border-box;\n  position: relative;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  cursor: pointer;\n  outline: none;\n  border: none;\n  -webkit-tap-highlight-color: transparent;\n  display: inline-block;\n  white-space: nowrap;\n  text-decoration: none;\n  vertical-align: baseline;\n  text-align: center;\n  margin: 0;\n  min-width: 64px;\n  line-height: 36px;\n  padding: 0 16px;\n  border-radius: 4px;\n  overflow: visible;\n  transform: translate3d(0, 0, 0);\n  transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n  margin: 1rem;\n  font-weight: 500;\n}",
+                "customFunction" : "console.log(widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap\n    .get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap\n    .get('assetService'));\nlet customerService = $injector.get(widgetContext.servicesMap\n    .get('customerService'));\nlet deviceService = $injector.get(widgetContext.servicesMap\n    .get('deviceService'));\nlet attributeService = $injector.get(widgetContext\n    .servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext\n    .servicesMap.get('entityRelationService'));\nlet entityGroupService = $injector.get(widgetContext\n    .servicesMap.get('entityGroupService'));\nlet userService = $injector.get(widgetContext\n    .servicesMap.get('userService'));\n\nopenAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate,\n        AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.customers = [];\n\n    vm.addEntityFormGroup = vm.fb.group({\n        customer: ['', [vm.validators.required]],\n        shipName: ['', [vm.validators.required]],\n        attributes: vm.fb.group({\n         floorMap:[null, [vm.validators.required]]\n        })\n    });\n\n\n    vm.onFloorMapSelect = function(event) {\n        var output = document.getElementById(\n            'floormapPreview');\n\n\n        const file = event.target.files[0];\n        const reader = new FileReader();\n\n        reader.addEventListener(\"load\", function() {\n            vm.selectedFloorMap = reader.result;\n            output.src = reader.result;\n            vm.addEntityFormGroup.controls.attributes.controls.floorMap.patchValue(reader.result, {\n                            emitEvent: true\n                        });\n\n        }, false);\n\n        if (file) {\n            reader.readAsDataURL(file);\n        }\n\n    };\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.displayEntityFn = function(entity) {\n        return entity ? entity.name : undefined;\n    }\n\n    vm.onCustomerFocus = function() {\n        if (vm.addEntityFormGroup.controls\n            .customer.value == null) {\n            vm.addEntityFormGroup.patchValue({\n                customer: \"\"\n            }, {\n                emitEvent: true\n            });\n\n        }\n    }\n\n\n    function _filteredCustomers(value) {\n        if (value != null && value.id) {\n            return vm.customers.filter(option => option\n                .name && option.name.toLowerCase()\n                .includes(value.name.toLowerCase()));\n        }\n        const filterValue = value.toLowerCase();\n        return vm.customers.filter(option => option\n            .name && option.name.toLowerCase().includes(\n                filterValue));\n    }\n\n    \n\n    vm.filteredCustomers = vm.addEntityFormGroup.controls\n        .customer.valueChanges.pipe(window.rxjs.operators\n            .map(\n                value => _filteredCustomers(value))\n        );\n\n    loadCustomers(widgetContext.pageLink(pageSize = 100,\n        page = 0));\n\n\n    vm.save = function() {\n        vm.addEntityFormGroup.markAsPristine();\n        saveEntityObservable().subscribe(function(entity){\n            saveAttributes(entity.id).subscribe(function(){\n                widgetContext.updateAliases();\n                vm.dialogRef.close(null);\n            });\n        });\n    };\n\n    function saveAttributes(entityId) {\n        let attributes = vm.addEntityFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            if(attributes[key] !== null) {\n                attributesArray.push({key: key, value: attributes[key]});\n            }\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributesArray);\n        }\n        return widgetContext.rxjs.of([]);\n    }\n    function saveEntityObservable() {\n        const formValues = vm.addEntityFormGroup.value;\n        let entity = {\n            name: formValues.shipName,\n            type: \"ship\",\n\n            \"customerId\": formValues.customer.id,\n            \"ownerId\": formValues.customer.id\n        };\n        return assetService.saveAsset(entity);\n    }\n    \n    function loadCustomers(pageLink) {\n        customerService.getCustomers(pageLink)\n            .subscribe(function(result) {\n                    vm.customers = vm.customers.concat(result.data)\n                    if (result.hasNext ==true) {\n                        loadCustomers(\n                            widgetContext.pageLink(pageSize =100,page =pageLink.page +1\n                            ));\n                    } else {\n                        vm.addEntityFormGroup.patchValue({\n                            customer: \"\"\n                        }, {\n                            emitEvent: true\n                        });\n\n                    }\n\n                },\n                function(err) {\n                    console.log(\"Error: \", err);\n                })\n\n    }\n\n}",
+                "customResources" : [ {
+                  "url" : "https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"
+                } ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "5caa2693-bfca-fccf-7595-98932069c160"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Delete",
+                "icon" : "delete",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "\nlet $injector = widgetContext.$scope.$injector;\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\n\nopenDeleteEntityDialog();\n\nfunction openDeleteEntityDialog() {\n    let title = 'Delete Ship ' +\n                entityName;\n    let content = 'Are you sure you want to delete the Ship ' + entityName + '?';\n    dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(\n        function(result) {\n            if (result) {\n                deleteEntity();\n            }\n        }\n    );\n}\n\nfunction deleteEntity() {\n    deleteEntityObservable(entityId).subscribe(\n        function success() {\n            widgetContext.updateAliases();\n        },\n        function fail() {\n            showErrorDialog();\n        }\n    );\n}\n\nfunction deleteEntityObservable(entityId) {\n    if (entityId.entityType == \"ASSET\") {\n        return assetService.deleteAsset(entityId.id);\n    } else if (entityId.entityType == \"DEVICE\") {\n        return deviceService.deleteDevice(entityId.id);\n    }\n}\n\nfunction showErrorDialog() {\n    let title = 'Error';\n    let content = 'An error occurred while deleting the ship. Please try again.';\n    dialogs.alert(title, content, 'CLOSE').subscribe(\n        function(result) {}\n    );\n}\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "683dc012-5a2c-2c11-a07f-0223e9e11495"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "ef9eabac-9e78-10ae-3351-8833fe789afd"
+        },
+        "f99ad0aa-5230-82d2-144c-d0bbafcd8701" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1677128319730,
+                  "endTimeMs" : 1677214719730
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "enableSearch" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "displayEntityName" : true,
+              "displayEntityType" : true,
+              "enableSelectColumnDisplay" : false,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityLabel" : false,
+              "useRowStyleFunction" : false,
+              "entitiesTitle" : "Engines"
+            },
+            "title" : "New Entities table",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "ee6c13e2-abee-885b-1ceb-bc2708fb69c4",
+              "filterId" : null,
+              "dataKeys" : [ ]
+            } ],
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "Add",
+                "icon" : "add",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "\n<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Add Apartment</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n                <mat-form-field class=\"mat-block\" fxFlex>\n                    <input matInput type=\"text\" \n                        placeholder=\"Customer\" #entityInput\n                        formControlName=\"customer\"\n                        [matAutocomplete]=\"userAutocomplete\"\n                        (focusin)=\"onCustomerFocus()\">\n                    <mat-autocomplete\n                        class=\"tb-autocomplete\"\n                        [displayWith]=\"displayEntityFn\"\n                        #userAutocomplete=\"matAutocomplete\">\n                        <mat-option\n                            *ngFor=\"let entity of filteredCustomers | async\"\n                            [value]=\"entity\">\n                            <span\n                                [innerHTML]=\"entity.name\"></span>\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n        \n        </div>\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n                <mat-form-field class=\"mat-block\" fxFlex>\n                    <input matInput type=\"text\" \n                        placeholder=\"Customer Ship\" #entityInput\n                        formControlName=\"customerShip\"\n                        [matAutocomplete]=\"shipAutocomplete\"\n                        (focusin)=\"onCustomerShipFocus()\">\n                    <mat-autocomplete\n                        class=\"tb-autocomplete\"\n                        [displayWith]=\"displayEntityFn\"\n                        #shipAutocomplete=\"matAutocomplete\">\n                        <mat-option\n                            *ngFor=\"let entity of filteredCustomerShips | async\"\n                            [value]=\"entity\">\n                            <span\n                                [innerHTML]=\"entity.name\"></span>\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n        \n        </div>\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n            <mat-form-field fxFlex>\n                <mat-label>Engine Name</mat-label>\n                <input matInput formControlName=\"engineName\">\n            </mat-form-field>\n        </div>\n\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancel\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Add\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "console.log(widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap\n    .get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap\n    .get('assetService'));\nlet customerService = $injector.get(widgetContext.servicesMap\n    .get('customerService'));\nlet deviceService = $injector.get(widgetContext.servicesMap\n    .get('deviceService'));\nlet attributeService = $injector.get(widgetContext\n    .servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext\n    .servicesMap.get('entityRelationService'));\nlet entityGroupService = $injector.get(widgetContext\n    .servicesMap.get('entityGroupService'));\nlet userService = $injector.get(widgetContext\n    .servicesMap.get('userService'));\nopenAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate,\n        AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.customers = [];\n    vm.customerShips = [];\n\n    vm.addEntityFormGroup = vm.fb.group({\n        customer: ['', [vm.validators.required]],\n        customerShip: ['', [vm.validators.required]],\n        engineName: ['', [vm.validators.required]],\n        \n    });\n\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.displayEntityFn = function(entity) {\n        return entity ? entity.name : undefined;\n    }\n\n    vm.onCustomerFocus = function() {\n        if (vm.addEntityFormGroup.controls\n            .customer.value == null) {\n            vm.addEntityFormGroup.patchValue({\n                customer: \"\"\n            }, {\n                emitEvent: true\n            });\n\n        }\n        else if(vm.addEntityFormGroup.controls\n            .customer.value.id !== undefined &&vm.customers.find(e=>e.id.id==vm.addEntityFormGroup.controls\n            .customer.value.id.id)){\n            loadCustomerShips(widgetContext.pageLink(pageSize = 100,\n        page = 0));\n        }\n    }\n\n    vm.onCustomerShipFocus = function() {\n        console.log(vm.customerShips)\n        if (vm.addEntityFormGroup.controls\n            .customerShip.value == null) {\n            vm.addEntityFormGroup.patchValue({\n                customerShip: \"\"\n            }, {\n                emitEvent: true\n            });\n\n        }\n    }\n\n    function _filteredCustomerShips(value) {\n        console.log(\"ship value: \",value)\n        if (value != null && value.id) {\n            return vm.customerShips.filter(option => option\n                .name && option.name.toLowerCase()\n                .includes(value.name.toLowerCase()));\n        }\n        const filterValue = value.toLowerCase();\n        return vm.customerShips.filter(option => option\n            .name && option.name.toLowerCase().includes(\n                filterValue));\n    }\n\n    \n\n    vm.filteredCustomerShips = vm.addEntityFormGroup.controls\n        .customerShip.valueChanges.pipe(window.rxjs.operators\n            .map(\n                value => _filteredCustomerShips(value))\n        );\n        \n        function _filteredCustomers(value) {\n        if (value != null && value.id) {\n            return vm.customers.filter(option => option\n                .name && option.name.toLowerCase()\n                .includes(value.name.toLowerCase()));\n        }\n        const filterValue = value.toLowerCase();\n        return vm.customers.filter(option => option\n            .name && option.name.toLowerCase().includes(\n                filterValue));\n    }\n\n    \n\n    vm.filteredCustomers = vm.addEntityFormGroup.controls\n        .customer.valueChanges.pipe(window.rxjs.operators\n            .map(\n                value => _filteredCustomers(value))\n    );\n\n    loadCustomers(widgetContext.pageLink(pageSize = 100,\n        page = 0));\n\n\n    vm.save = function() {\n        vm.addEntityFormGroup.markAsPristine();\n        saveEntityObservable().subscribe(function(entity){\n            const formValues = vm.addEntityFormGroup.value;\n            entityRelationService.saveRelation({\n                \"from\":  formValues.customerShip.id,\n                \"to\": entity.id,\n                \"type\": \"Contains\",\n                \"typeGroup\": \"COMMON\",\n                \"additionalInfo\": {}\n            }).subscribe(function(){\n                widgetContext.updateAliases();\n                vm.dialogRef.close(null);\n            });\n            \n        });\n\n\n    };\n\n    function saveEntityObservable() {\n        const formValues = vm.addEntityFormGroup.value;\n        let entity = {\n            name: formValues.engineName,\n            type: \"engine\",\n            \"customerId\": formValues.customer.id,\n            \"ownerId\": formValues.customer.id\n        };\n        return assetService.saveAsset(entity);\n    }\n    \n    function loadCustomers(pageLink) {\n        customerService.getCustomers(pageLink)\n            .subscribe(function(result) {\n                    vm.customers = vm.customers.concat(result.data)\n                    if (result.hasNext ==true) {\n                        loadCustomers(\n                            widgetContext.pageLink(pageSize =100,page =pageLink.page +1\n                            ));\n                    } else {\n                        vm.addEntityFormGroup.patchValue({\n                            customer: \"\"\n                        }, {\n                            emitEvent: true\n                        });\n\n                    }\n\n                },\n                function(err) {\n                    console.log(\"Error: \", err);\n                })\n\n    }\n\n\n    function loadCustomerShips(pageLink) {\n        \n        assetService.getCustomerAssets(vm.addEntityFormGroup.controls\n            .customer.value.id.id,pageLink,\"ship\")\n            .subscribe(function(result) {\n                console.log(\"load Customer Ships: \",result)\n                    vm.customerShips = vm.customerShips.concat(result.data)\n                    if (result.hasNext ==true) {\n                        loadCustomerShips(\n                            widgetContext.pageLink(pageSize =100,page =pageLink.page +1\n                            ));\n                    } else {\n                        vm.addEntityFormGroup.patchValue({\n                            customerShip: \"\"\n                        }, {\n                            emitEvent: true\n                        });\n\n                    }\n\n                },\n                function(err) {\n                    console.log(\"Error: \", err);\n                })\n\n    }\n\n}",
+                "customResources" : [ {
+                  "url" : "https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"
+                } ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "2f4edc78-ca1d-728c-f52b-bbd547b42644"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Delete",
+                "icon" : "delete",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\n\nopenDeleteEntityDialog();\n\nfunction openDeleteEntityDialog() {\n    let title = 'Delete Engine ' +\n                entityName;\n    let content = 'Are you sure you want to delete the Engine'+ entityName + '?';\n    dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(\n        function(result) {\n            if (result) {\n                deleteEntity();\n            }\n        }\n    );\n}\n\nfunction deleteEntity() {\n    deleteEntityObservable(entityId).subscribe(\n        function success() {\n            widgetContext.updateAliases();\n        },\n        function fail() {\n            showErrorDialog();\n        }\n    );\n}\n\nfunction deleteEntityObservable(entityId) {\n    if (entityId.entityType == \"ASSET\") {\n        return assetService.deleteAsset(entityId.id);\n    } else if (entityId.entityType == \"DEVICE\") {\n        return deviceService.deleteDevice(entityId.id);\n    }\n}\n\nfunction showErrorDialog() {\n    let title = 'Error';\n    let content = 'An error occurred while deleting the Engine. Please try again.';\n    dialogs.alert(title, content, 'CLOSE').subscribe(\n        function(result) {}\n    );\n}",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d8611a79-38a1-7cb6-95c2-e8b87b0f0744"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "f99ad0aa-5230-82d2-144c-d0bbafcd8701"
+        },
+        "bcf72e40-1dd6-9cab-6f0c-b2e77523813b" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1677128319730,
+                  "endTimeMs" : 1677214719730
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "enableSearch" : false,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "displayEntityName" : true,
+              "displayEntityType" : true,
+              "enableSelectColumnDisplay" : false,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityLabel" : false,
+              "useRowStyleFunction" : false,
+              "entitiesTitle" : "Devices"
+            },
+            "title" : "New Entities table",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "7a0658a6-05ec-cfcd-6fad-ced77f6194c7",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "additional_info",
+                "type" : "entityField",
+                "label" : "additionalInfo",
+                "color" : "#2196f3",
+                "settings" : {
+                  "columnWidth" : "0px",
+                  "useCellStyleFunction" : false,
+                  "cellStyleFunction" : "",
+                  "useCellContentFunction" : false,
+                  "cellContentFunction" : "",
+                  "defaultColumnVisibility" : "visible",
+                  "columnSelectionToDisplay" : "enabled",
+                  "columnExportOption" : "onlyVisible"
+                },
+                "_hash" : 0.8491796896006911,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            } ],
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "Add",
+                "icon" : "add",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "customPretty",
+                "customHtml" : "\n<form #addEntityForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\"\n      (ngSubmit)=\"save()\" class=\"add-entity-form\">\n    <mat-toolbar fxLayout=\"row\" color=\"primary\">\n        <h2>Add Apartment</h2>\n        <span fxFlex></span>\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\n            <mat-icon class=\"material-icons\">close</mat-icon>\n        </button>\n    </mat-toolbar>\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n    </mat-progress-bar>\n    <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n    <div mat-dialog-content fxLayout=\"column\">\n\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n                <mat-form-field class=\"mat-block\" fxFlex>\n                    <input matInput type=\"text\" \n                        placeholder=\"Customer\" #entityInput\n                        formControlName=\"customer\"\n                        [matAutocomplete]=\"userAutocomplete\"\n                        (focusin)=\"onCustomerFocus()\">\n                    <mat-autocomplete\n                        class=\"tb-autocomplete\"\n                        [displayWith]=\"displayEntityFn\"\n                        #userAutocomplete=\"matAutocomplete\"\n                        (optionSelected)=\"onCustomerSelected($event.option.value)\"\n                        >\n                        <mat-option  \n                            *ngFor=\"let entity of filteredCustomers | async\"\n                            [value]=\"entity\">\n                            <span\n                                [innerHTML]=\"entity.name\"></span>\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n        \n        </div>\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n            <mat-form-field fxFlex class=\"mat-block\">\n              <mat-label>Placed At</mat-label>\n              <mat-select formControlName=\"placedAt\" (selectionChange)=\"placedAtSelected($event.value)\">\n                <mat-option *ngFor=\"let type of placedAtOptions\" [value]=\"type\">\n                  {{type}}\n                </mat-option>\n\n\n              </mat-select>\n            </mat-form-field>\n        \n        </div>\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n                <mat-form-field class=\"mat-block\" fxFlex>\n                    <input matInput type=\"text\" \n                        placeholder=\"Customer Ship\" #entityInput\n                        formControlName=\"customerShip\"\n                        [matAutocomplete]=\"shipAutocomplete\"\n                        (focusin)=\"onCustomerShipFocus()\">\n                    <mat-autocomplete\n                        class=\"tb-autocomplete\"\n                        [displayWith]=\"displayEntityFn\"\n                        #shipAutocomplete=\"matAutocomplete\"\n                        (optionSelected)=\"onShipSelected($event.option.value)\"\n                        >\n                        <mat-option \n                            *ngFor=\"let entity of filteredCustomerShips | async\"\n                            [value]=\"entity\">\n                            <span\n                                [innerHTML]=\"entity.name\"></span>\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n        \n        </div>\n\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\" >\n                <mat-form-field class=\"mat-block\" fxFlex  *ngIf=\"addEntityFormGroup.get('placedAt').value=='Engine'\">\n                    <input matInput type=\"text\" \n                        placeholder=\"Engine\" #entityInput\n                        formControlName=\"shipEngine\"\n                        [matAutocomplete]=\"engineAutocomplete\"\n                        (focusin)=\"onShipEngineFocus()\">\n                    <mat-autocomplete\n                        class=\"tb-autocomplete\"\n                        [displayWith]=\"displayEntityFn\"\n                        #engineAutocomplete=\"matAutocomplete\">\n                        <mat-option\n                            *ngFor=\"let entity of filteredShipEngines | async\"\n                            [value]=\"entity\">\n                            <span\n                                [innerHTML]=\"entity.name\"></span>\n                        </mat-option>\n                    </mat-autocomplete>\n                </mat-form-field>\n                <div fxLayout=\"row\" fxLayoutGap=\"8px\"\n                fxLayout.xs=\"column\" fxLayoutGap.xs=\"0\" *ngIf=\"addEntityFormGroup.get('placedAt').value=='Ship'\">\n                <canvas id='FloorPlanCanvas'\n                    style=\"height:300px;width:600px\"></canvas>\n            </div>\n        </div>\n\n\n\n        <div fxLayout=\"row\" fxLayoutGap=\"8px\" fxLayout.xs=\"column\"  fxLayoutGap.xs=\"0\">\n            <mat-form-field fxFlex class=\"mat-block\">\n              <mat-label>Device Type</mat-label>\n              <mat-select formControlName=\"deviceType\" >\n                <mat-option *ngFor=\"let type of deviceTypes\" [value]=\"type\">\n                  {{type}}\n                </mat-option>\n\n\n              </mat-select>\n            </mat-form-field>\n\n            <mat-form-field fxFlex>\n                <mat-label>Device Name</mat-label>\n                <input matInput formControlName=\"deviceName\">\n            </mat-form-field>\n        </div>\n\n    </div>\n    <div mat-dialog-actions fxLayout=\"row\" fxLayoutAlign=\"end center\">\n        <button mat-button color=\"primary\"\n                type=\"button\"\n                [disabled]=\"(isLoading$ | async)\"\n                (click)=\"cancel()\" cdkFocusInitial>\n            Cancel\n        </button>\n        <button mat-button mat-raised-button color=\"primary\"\n                type=\"submit\"\n                [disabled]=\"(isLoading$ | async) || addEntityForm.invalid || !addEntityForm.dirty\">\n            Add\n        </button>\n    </div>\n</form>\n",
+                "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    margin-bottom: 8px;\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
+                "customFunction" : "console.log(widgetContext)\n\nlet $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap\n    .get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap\n    .get('assetService'));\nlet customerService = $injector.get(widgetContext.servicesMap\n    .get('customerService'));\nlet deviceService = $injector.get(widgetContext.servicesMap\n    .get('deviceService'));\nlet attributeService = $injector.get(widgetContext\n    .servicesMap.get('attributeService'));\nlet entityRelationService = $injector.get(widgetContext\n    .servicesMap.get('entityRelationService'));\nlet entityGroupService = $injector.get(widgetContext\n    .servicesMap.get('entityGroupService'));\nlet userService = $injector.get(widgetContext\n    .servicesMap.get('userService'));\nopenAddEntityDialog();\n\nfunction openAddEntityDialog() {\n    customDialog.customDialog(htmlTemplate,\n        AddEntityDialogController).subscribe();\n}\n\nfunction AddEntityDialogController(instance) {\n    let vm = instance;\n    vm.customers = [];\n    vm.zoomImage={};\n    vm.customerShips = [];\n    vm.shipEngines = [];\n    vm.placedAtOptions = ['Engine', 'Ship'];\n    vm.deviceTypes = ['device type-1', 'device type-2'];\n\n    vm.addEntityFormGroup = vm.fb.group({\n        customer: ['', [vm.validators.required]],\n        customerShip: ['', [vm.validators.required]],\n        shipEngine: ['', [vm.validators.required]],\n        deviceName: ['', [vm.validators.required]],\n        deviceType:['', [vm.validators.required]],\n        placedAt: [\"Engine\", [vm.validators.required]],\n        attributes: vm.fb.group({\n        xPos:[null, [vm.validators.required]],\n        yPos:[null, [vm.validators.required]],\n     }),\n    });\n            var controls=vm.addEntityFormGroup.controls['attributes'].controls\n            for (var control in controls) {\n                controls[control].disable()\n            }\n    vm.placedAtSelected=function(value){\n        if(value==\"Engine\"){\n            vm.addEntityFormGroup.controls['shipEngine'].enable();\n            var controls=vm.addEntityFormGroup.controls['attributes'].controls\n            for (var control in controls) {\n                controls[control].disable()\n            }\n        }\n        else if(value==\"Ship\"){\n            vm.addEntityFormGroup.controls['shipEngine'].disable();\n            var controls=vm.addEntityFormGroup.controls['attributes'].controls\n            for (var control in controls) {\n                controls[control].disable()\n            }\n            \n        }\n        vm.addEntityFormGroup.patchValue({\n                shipEngine: \"\",\n                customerShip:\"\",\n            }, {\n                emitEvent: true\n            });\n\n                // [disabled]=\"addEntityFormGroup.get('showAll').value==true\"\n    }\n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    vm.displayEntityFn = function(entity) {\n        return entity ? entity.name : undefined;\n    }\n\n\n    vm.onCustomerShipFocus = function() {\n        console.log(vm.customerShips)\n        if (vm.addEntityFormGroup.controls\n            .customerShip.value == null) {\n            vm.addEntityFormGroup.patchValue({\n                customerShip: \"\"\n            }, {\n                emitEvent: true\n            });\n        }\n    }\n    vm.onShipSelected=function(value){\n        if(vm.addEntityFormGroup.get('placedAt').value=='Ship'){\n            attributeService.getEntityAttributes(\n                    value.id, 'SERVER_SCOPE').subscribe(\n                    function(data) {\n                        var _image = data.find(key =>\n                            key.key === \"floorMap\").value\n                        vm.FloorPlanCanvas = document.getElementById(\"FloorPlanCanvas\");\n                        init(_image)\n                    });            \n        }\n        else{\n            loadEngines(vm.addEntityFormGroup.value.customerShip.id);\n        }\n    }\n    function _filteredCustomerShips(value) {\n        if (value != null && value.id) {\n            return vm.customerShips.filter(option => option\n                .name && option.name.toLowerCase()\n                .includes(value.name.toLowerCase()));\n        }\n        const filterValue = value.toLowerCase();\n        return vm.customerShips.filter(option => option\n            .name && option.name.toLowerCase().includes(\n                filterValue));\n    }\n    vm.filteredCustomerShips = vm.addEntityFormGroup.controls\n        .customerShip.valueChanges.pipe(window.rxjs.operators\n            .map(\n                value => _filteredCustomerShips(value))\n        );\n\n    \n    vm.onCustomerFocus = function() {\n        if (vm.addEntityFormGroup.controls\n            .customer.value == null) {\n            vm.addEntityFormGroup.patchValue({\n                customer: \"\",\n                customerShip:\"\",\n            }, {\n                emitEvent: true\n            });\n\n        }\n    }\n    vm.onCustomerSelected=function(value){\n            vm.customerShips = [];\n\n        loadCustomerShips(widgetContext.pageLink(pageSize = 100,\n        page = 0));\n\n\n    }\n    function _filteredCustomers(value) {\n        if (value != null && value.id) {\n            return vm.customers.filter(option => option\n                .name && option.name.toLowerCase()\n                .includes(value.name.toLowerCase()));\n        }\n        const filterValue = value.toLowerCase();\n        return vm.customers.filter(option => option\n            .name && option.name.toLowerCase().includes(\n                filterValue));\n    }\n    vm.filteredCustomers = vm.addEntityFormGroup.controls\n        .customer.valueChanges.pipe(window.rxjs.operators\n            .map(\n                value => _filteredCustomers(value))\n    );   \n\n\n\n\n\n\n    vm.onShipEngineFocus = function() {\n        if (vm.addEntityFormGroup.controls\n            .shipEngine.value == null) {\n            vm.addEntityFormGroup.patchValue({\n                shipEngine: \"\"\n            }, {\n                emitEvent: true\n            });\n\n        }    }\n    vm.onEngineSelected=function(value){\n        console.log(\"Engine selected\")\n    }\n    function _filteredShipEngines(value) {\n        if (value != null && value.id) {\n            return vm.shipEngines.filter(option => option\n                .name && option.name.toLowerCase()\n                .includes(value.name.toLowerCase()));\n        }\n        const filterValue = value.toLowerCase();\n        return vm.shipEngines.filter(option => option\n            .name && option.name.toLowerCase().includes(\n                filterValue));\n    }\n    vm.filteredShipEngines = vm.addEntityFormGroup.controls\n        .shipEngine.valueChanges.pipe(window.rxjs.operators\n            .map(\n                value => _filteredShipEngines(value))\n    );\n\n\n    loadCustomers(widgetContext.pageLink(pageSize = 100,\n        page = 0));\n\n\n    vm.save = function() {\n        vm.addEntityFormGroup.markAsPristine();\n        saveEntityObservable().subscribe(function(entity){\n            const formValues = vm.addEntityFormGroup.value;\n            var query=[];\n                query.push(entityRelationService.saveRelation({\n                        \"from\":  formValues.placedAt==\"Ship\"?formValues.customerShip.id:formValues.shipEngine.id,\n                        \"to\": entity.id,\n                        \"type\": \"Contains\",\n                        \"typeGroup\": \"COMMON\",\n                        \"additionalInfo\": {}\n                    }))\n                if(formValues.placedAt==\"Ship\"){\n                    query.push(saveAttributes(entity.id))\n                }\n                 widgetContext.rxjs.forkJoin(query).subscribe(function(data){\n                widgetContext.updateAliases();\n                vm.dialogRef.close(null);\n                \n            })\n            \n        });\n\n\n    };\n\n\n    function saveAttributes(entityId) {\n        let attributes = vm.addEntityFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            if(attributes[key] !== null) {\n                attributesArray.push({key: key, value: attributes[key]});\n            }\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributesArray);\n        }\n        return widgetContext.rxjs.of([]);\n    }\n    function saveEntityObservable() {\n        const formValues = vm.addEntityFormGroup.value;\n        let entity = {\n            name: formValues.deviceName,\n            type: formValues.deviceType,\n            \"customerId\": formValues.customer.id,\n            \"ownerId\": formValues.customer.id\n        };\n        return deviceService.saveDevice(entity);\n    }\n    \n    function loadCustomers(pageLink) {\n        customerService.getCustomers(pageLink)\n            .subscribe(function(result) {\n                    vm.customers = vm.customers.concat(result.data)\n                    if (result.hasNext ==true) {\n                        loadCustomers(\n                            widgetContext.pageLink(pageSize =100,page =pageLink.page +1\n                            ));\n                    } else {\n                        vm.addEntityFormGroup.patchValue({\n                            customer: \"\"\n                        }, {\n                            emitEvent: true\n                        });\n\n                    }\n\n                },\n                function(err) {\n                    console.log(\"Error: \", err);\n                })\n\n    }\n\n\n    function loadCustomerShips(pageLink) {\n        \n        assetService.getCustomerAssets(vm.addEntityFormGroup.controls\n            .customer.value.id.id,pageLink,\"ship\")\n            .subscribe(function(result) {\n                console.log(\"load Customer Ships: \",result)\n                    vm.customerShips = vm.customerShips.concat(result.data)\n                    if (result.hasNext ==true) {\n                        loadCustomerShips(\n                            widgetContext.pageLink(pageSize =100,page =pageLink.page +1\n                            ));\n                    } else {\n                        vm.addEntityFormGroup.patchValue({\n                            customerShip: \"\"\n                        }, {\n                            emitEvent: true\n                        });\n\n                    }\n\n                },\n                function(err) {\n                    console.log(\"Error: \", err);\n                })\n\n    }\n\n    function loadEngines(id) {\n        vm.shipEngines=[];\n        entityRelationService.findByFromAndType(id,\"Contains\")\n        .subscribe(function(result){\n            if(result.length>=1){\n                loadEntites(0,result.map(e=>e.to.id));\n            }\n            else{\n                vm.addEntityFormGroup.patchValue({\n                            shipEngine: \"\"\n                        }, {\n                            emitEvent: true\n                        });\n\n            }\n        })\n\n    }\n    function loadEntites(starFrom,list){\n        var entityCount=1\n\n        assetService.getAssets(list.slice(starFrom,starFrom+Math.min(starFrom+entityCount,list.length))).subscribe(\n            function(result) {\n                vm.shipEngines = vm.shipEngines.concat(result)\n                if(starFrom+entityCount<list.length-1){\n                    loadEntites(starFrom+entityCount,list);\n                }\n                else{\n                vm.addEntityFormGroup.patchValue({\n                            shipEngine: \"\"\n                        }, {\n                            emitEvent: true\n                        });\n                }\n                        \n                },\n                function(err) {\n                    console.log(\"Error: \", err);\n                })\n\n    }\n\n    function mouseDownImage(evt) {\n        console.log(\"mouseDownImage\")\n        if (evt.ctrlKey) {\n        document.body.style.mozUserSelect =\n                    document.body.style.webkitUserSelect = document\n                    .body.style.userSelect = 'none';\n                vm.zoomImage.lastX = evt.offsetX || (evt.pageX -\n                    vm.zoomImage.can.offsetLeft);\n                vm.zoomImage.lastY = evt.offsetY || (evt.pageY -\n                    vm.zoomImage.can.offsetTop);\n                dragStart = vm.zoomImage.ct.transformedPoint(\n                    vm.zoomImage.lastX, vm.zoomImage.lastY);\n                dragged = false;\n            } else {\n                var p1 = vm.zoomImage.ct.transformedPoint(0, 0);\n                var canvasPoints = GetCoordinates(\n                    evt);\n                processClick([p1[\"x\"] + (\n                    canvasPoints[0] /\n                    vm.zoomImage.currentScale), p1[\n                    \"y\"] + (\n                    canvasPoints[1] /\n                    vm.zoomImage.currentScale)]);\n            }\n        }\n\n    function mouseMoveImage(evt) {\n            if (evt.ctrlKey) {\n                vm.zoomImage.lastX = evt.offsetX || (evt.pageX -\n                    vm.zoomImage.can.offsetLeft);\n                vm.zoomImage.lastY = evt.offsetY || (evt.pageY -\n                    vm.zoomImage.can.offsetTop);\n                dragged = true;\n                if (dragStart) {\n                    var pt = vm.zoomImage.ct.transformedPoint(\n                        vm.zoomImage.lastX, vm.zoomImage.lastY);\n                    vm.zoomImage.ct.translate(pt.x - dragStart.x,\n                        pt.y - dragStart.y);\n                    redraw(vm.zoomImage.ct, vm.zoomImage.can, vm.zoomImage.image);\n                }\n            }\n        }\n        \n    function mouseUpImage(evt) {\n            console.log(\"mouseUp\")\n            if (evt.ctrlKey) {\n                dragStart = null;\n                if (!dragged) zoom(evt.shiftKey ? -\n                    1 : 1);\n            }\n        }\n    function handleScroll(evt) {\n            var delta = evt.wheelDelta ? evt\n                .wheelDelta / 40 : evt.detail ? -evt\n                .detail : 0;\n            if (delta) zoom(delta);\n            return evt.preventDefault() && false;\n        };\n    var zoom = function(clicks) {\n            var pt = vm.zoomImage.ct.transformedPoint(vm.zoomImage.lastX, vm.zoomImage.lastY);\n            vm.zoomImage.ct.translate(pt.x, pt.y);\n            var factor = Math.pow(vm.zoomImage.scaleFactor, clicks);\n            vm.zoomImage.currentScale = vm.zoomImage.currentScale * factor;\n            vm.zoomImage.ct.scale(factor, factor);\n            vm.zoomImage.ct.translate(-pt.x, -pt.y);\n            redraw(vm.zoomImage.ct, vm.zoomImage.can, vm.zoomImage.image);\n        }\n\n    function setupZoomAndPan(ct, can, image) {\n        trackTransforms(ct);\n        vm.zoomImage.ct=ct;\n        vm.zoomImage.can=can;\n        vm.zoomImage.image=image;\n        redraw(ct, can, image);\n        vm.zoomImage.lastX = can.width / 2;\n        vm.zoomImage.lastY = can.height / 2;\n        vm.zoomImage.dragStart;\n        vm.zoomImage.dragged;\n        vm.zoomImage.scaleFactor = 1.1;\n        vm.zoomImage.currentScale = 1.0;\n        vm.zoomImage.canvasLastX = vm.zoomImage.lastX;\n        vm.zoomImage.canvasLastY = vm.zoomImage.lastY;\n\n        setToPosition(ct, can, image, image.width / 2, image\n            .height / 2);\n\n        can.removeEventListener('mousedown', mouseDownImage)\n        can.addEventListener('mousedown',mouseDownImage , false);\n\n        can.removeEventListener('mousemove', mouseMoveImage)\n        can.addEventListener('mousemove',mouseMoveImage , false);\n\n        can.removeEventListener('mouseup', mouseUpImage)\n        can.addEventListener('mouseup',mouseUpImage , false);\n\n\n\n\n        can.removeEventListener('DOMMouseScroll', handleScroll)\n        can.addEventListener('DOMMouseScroll', handleScroll,\n            false);\n        can.removeEventListener('mousewheel', handleScroll)\n        can.addEventListener('mousewheel', handleScroll, {\n            passive: false\n        });\n    }\n\n    function init(imageDataURL) {\n        var img = new Image();\n        img.onload = function() {\n            var width = 600;\n            var height = 300;\n            vm.FloorPlanCanvas.width = width;\n            vm.FloorPlanCanvas.height = height;\n            var FloorPlanCtx = vm.FloorPlanCanvas\n                .getContext(\"2d\");\n            FloorPlanCtx.drawImage(img, 0, 0);\n            vm.floorImage = img;\n            setupZoomAndPan(FloorPlanCtx,\n                vm.FloorPlanCanvas, img);\n        }\n        img.src = imageDataURL;\n    }\n\n    function redraw(ct, can, image, ) {\n        var p1 = ct.transformedPoint(0, 0);\n        var p2 = ct.transformedPoint(can.width, can.height);\n        ct.clearRect(p1.x, p1.y, p2.x - p1.x, p2.y - p1.y);\n        ct.save();\n        ct.setTransform(1, 0, 0, 1, 0, 0);\n        ct.clearRect(0, 0, can.width, can.height);\n        ct.restore();\n        ct.drawImage(image, 0, 0);\n        drawItemsOnFloorPlan(vm.FloorPlanCanvas);\n    }\n\n    function setToPosition(ct, can, image, x, y) {\n        var pt = ct.transformedPoint(vm.zoomImage.canvasLastX,\n            vm.zoomImage.canvasLastY);\n        ct.translate((pt.x - x), (pt.y - y));\n        redraw(ct, can, image);\n    }\n\n    function trackTransforms(ctx) {\n        var svg = document.createElementNS(\n            \"http://www.w3.org/2000/svg\", 'svg');\n        var xform = svg.createSVGMatrix();\n        ctx.getTransform = function() {\n            return xform;\n        };\n\n        var savedTransforms = [];\n        var save = ctx.save;\n        ctx.save = function() {\n            savedTransforms.push(xform.translate(0, 0));\n            return save.call(ctx);\n        };\n\n        var restore = ctx.restore;\n        ctx.restore = function() {\n            xform = savedTransforms.pop();\n            return restore.call(ctx);\n        };\n\n        var scale = ctx.scale;\n        ctx.scale = function(sx, sy) {\n            xform = xform.scaleNonUniform(sx, sy);\n            return scale.call(ctx, sx, sy);\n        };\n\n        var rotate = ctx.rotate;\n        ctx.rotate = function(radians) {\n            xform = xform.rotate(radians * 180 / Math\n                .PI);\n            return rotate.call(ctx, radians);\n        };\n\n        var translate = ctx.translate;\n        ctx.translate = function(dx, dy) {\n            xform = xform.translate(dx, dy);\n            return translate.call(ctx, dx, dy);\n        };\n\n        var transform = ctx.transform;\n        ctx.transform = function(a, b, c, d, e, f) {\n            var m2 = svg.createSVGMatrix();\n            m2.a = a;\n            m2.b = b;\n            m2.c = c;\n            m2.d = d;\n            m2.e = e;\n            m2.f = f;\n            xform = xform.multiply(m2);\n            return transform.call(ctx, a, b, c, d, e,\n                f);\n        };\n\n        var setTransform = ctx.setTransform;\n        ctx.setTransform = function(a, b, c, d, e, f) {\n            xform.a = a;\n            xform.b = b;\n            xform.c = c;\n            xform.d = d;\n            xform.e = e;\n            xform.f = f;\n            return setTransform.call(ctx, a, b, c, d, e,\n                f);\n        };\n\n        var pt = svg.createSVGPoint();\n        ctx.transformedPoint = function(x, y) {\n            pt.x = x;\n            pt.y = y;\n            return pt.matrixTransform(xform.inverse());\n        }\n    }\n\n    function processClick(coordinates) {\n        var xCord = coordinates[0];\n        var yCord = coordinates[1];\n        vm.addEntityFormGroup.controls.attributes.patchValue({\n                    xPos: xCord/vm.floorImage.width,\n                    yPos:yCord/vm.floorImage.height,\n                }, {\n                    emitEvent: false\n                });\n        // floorPlan[\"co-ord\"].push(data);\n\n        drawItemsOnFloorPlan(vm.FloorPlanCanvas);\n\n    }\n\n\n    function drawItemsOnFloorPlan(can) {\n        var ctx = can.getContext('2d');\n        ctx.clearRect(0, 0, vm.floorImage.width, vm.floorImage\n            .height);\n        ctx.globalAlpha = 1.0;\n        ctx.drawImage(vm.floorImage, 0, 0);\n        if(vm.addEntityFormGroup.controls.attributes.value.xPos!==undefined && vm.addEntityFormGroup.controls.attributes.value.yPos!==undefined ){\n              ctx.beginPath();\n              ctx.strokeStyle = \"#00FF00\";\n              ctx.arc(vm.addEntityFormGroup.controls.attributes.value.xPos*vm.floorImage.width, vm.addEntityFormGroup.controls.attributes.value.yPos*vm.floorImage.height, 10, 0, 2 * Math.PI);\n              ctx.fill();\n              ctx.closePath();\n              ctx.lineWidth = 2;\n              ctx.stroke();\n\n            \n        }\n\n\n    }\n\n    function FindPosition(oElement) {\n        if (typeof(oElement.offsetParent) != \"undefined\") {\n            for (var posX = 0, posY =\n                    0; oElement; oElement = oElement\n                .offsetParent) {\n                posX += oElement.offsetLeft;\n                posY += oElement.offsetTop;\n            }\n            return [posX, posY];\n        } else {\n            return [oElement.x, oElement.y];\n        }\n    }\n\n    function GetCoordinates(e) {\n\n        var PosX = 0;\n        var PosY = 0;\n        var ImgPos;\n        ImgPos = FindPosition(vm.FloorPlanCanvas);\n        if (!e) var e = window.event;\n        if (e.pageX || e.pageY) {\n            PosX = e.pageX;\n            PosY = e.pageY;\n        } else if (e.clientX || e.clientY) {\n            PosX = e.clientX + document.body.scrollLeft +\n                document.documentElement.scrollLeft;\n            PosY = e.clientY + document.body.scrollTop +\n                document.documentElement.scrollTop;\n        }\n        PosX = PosX - ImgPos[0];\n        PosY = PosY - ImgPos[1];\n        return [PosX, PosY];\n    }\n\n}",
+                "customResources" : [ {
+                  "url" : "https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"
+                } ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "33522632-dc09-2df3-8dc3-3f059ac6e1c3"
+              } ],
+              "actionCellButton" : [ {
+                "name" : "Delete",
+                "icon" : "delete",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\n\nopenDeleteEntityDialog();\n\nfunction openDeleteEntityDialog() {\n    let title = 'Delete Device ' +\n                entityName;\n    let content = 'Are you sure you want to delete the device'+ entityName + '?';\n    dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(\n        function(result) {\n            if (result) {\n                deleteEntity();\n            }\n        }\n    );\n}\n\nfunction deleteEntity() {\n    deleteEntityObservable(entityId).subscribe(\n        function success() {\n            widgetContext.updateAliases();\n        },\n        function fail() {\n            showErrorDialog();\n        }\n    );\n}\n\nfunction deleteEntityObservable(entityId) {\n    if (entityId.entityType == \"ASSET\") {\n        return assetService.deleteAsset(entityId.id);\n    } else if (entityId.entityType == \"DEVICE\") {\n        return deviceService.deleteDevice(entityId.id);\n    }\n}\n\nfunction showErrorDialog() {\n    let title = 'Error';\n    let content = 'An error occurred while deleting the device. Please try again.';\n    dialogs.alert(title, content, 'CLOSE').subscribe(\n        function(result) {}\n    );\n}\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "24880e4d-ba3d-26e8-14e6-51cc1ffd955e"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "bcf72e40-1dd6-9cab-6f0c-b2e77523813b"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Admin Dashboard",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "f134276d-4cbf-e83f-181a-29ebe792f3c6" : {
+                  "sizeX" : 12,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 12
+                },
+                "b3ea2744-26a3-b2b9-5b62-dbfce882db65" : {
+                  "sizeX" : 12,
+                  "sizeY" : 11,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "ef9eabac-9e78-10ae-3351-8833fe789afd" : {
+                  "sizeX" : 12,
+                  "sizeY" : 10,
+                  "row" : 11,
+                  "col" : 0
+                },
+                "f99ad0aa-5230-82d2-144c-d0bbafcd8701" : {
+                  "sizeX" : 12,
+                  "sizeY" : 10,
+                  "row" : 11,
+                  "col" : 12
+                },
+                "bcf72e40-1dd6-9cab-6f0c-b2e77523813b" : {
+                  "sizeX" : 24,
+                  "sizeY" : 6,
+                  "row" : 21,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "5403dd0f-7cfc-c4b7-00d7-1d68c5137977" : {
+          "id" : "5403dd0f-7cfc-c4b7-00d7-1d68c5137977",
+          "alias" : "customers",
+          "filter" : {
+            "type" : "entityType",
+            "resolveMultiple" : true,
+            "entityType" : "CUSTOMER"
+          }
+        },
+        "4f74ead6-36ba-0dfe-8890-a3a8b1b8cc81" : {
+          "id" : "4f74ead6-36ba-0dfe-8890-a3a8b1b8cc81",
+          "alias" : "ships",
+          "filter" : {
+            "type" : "assetType",
+            "resolveMultiple" : true,
+            "assetType" : "ship",
+            "assetNameFilter" : ""
+          }
+        },
+        "ee6c13e2-abee-885b-1ceb-bc2708fb69c4" : {
+          "id" : "ee6c13e2-abee-885b-1ceb-bc2708fb69c4",
+          "alias" : "engines",
+          "filter" : {
+            "type" : "assetType",
+            "resolveMultiple" : true,
+            "assetType" : "engine",
+            "assetNameFilter" : ""
+          }
+        },
+        "7a0658a6-05ec-cfcd-6fad-ced77f6194c7" : {
+          "id" : "7a0658a6-05ec-cfcd-6fad-ced77f6194c7",
+          "alias" : "devices",
+          "filter" : {
+            "type" : "entityType",
+            "resolveMultiple" : true,
+            "entityType" : "DEVICE"
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "displayValue" : "",
+        "hideInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1664104579382,
+            "endTimeMs" : 1664190979382
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 25000
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "customerId" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "d3646d80-b3ff-11ed-b907-3bebb3a56b7b"
+    },
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "name" : "Admin Dashboard",
+    "ownerId" : null,
+    "title" : "Admin Dashboard"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

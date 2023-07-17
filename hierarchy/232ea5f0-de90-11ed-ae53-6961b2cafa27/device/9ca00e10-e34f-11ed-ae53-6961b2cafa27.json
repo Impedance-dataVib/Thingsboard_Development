@@ -1,0 +1,82 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "9ba0ea30-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "9ca00e10-e34f-11ed-ae53-6961b2cafa27"
+    },
+    "label" : "hskmn",
+    "name" : "232ea5f0-de90-11ed-ae53-6961b2cafa27_hry",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "softwareId" : null,
+    "type" : "Oil Condition Sensor"
+  },
+  "credentials" : {
+    "credentialsId" : "ZEjhd32ojEkgLVvDA0z8",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "965bbef0-e34f-11ed-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "9ca00e10-e34f-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1682416744634,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1682416744635,
+      "longValue" : 1682416744634,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1682416658840,
+      "longValue" : 60000,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

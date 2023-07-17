@@ -1,0 +1,82 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : null,
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "9ba0ea30-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "c328f940-e28a-11ed-ae53-6961b2cafa27"
+    },
+    "label" : "Engine 2 AKM",
+    "name" : "232ea5f0-de90-11ed-ae53-6961b2cafa27_Engine 2 AKM",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "softwareId" : null,
+    "type" : "Oil Condition Sensor"
+  },
+  "credentials" : {
+    "credentialsId" : "nSWwAYPfClpxu8wBOwpj",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "92482800-e28a-11ed-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "c328f940-e28a-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1682332204634,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1682332204635,
+      "longValue" : 1682332204634,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityTimeout",
+      "lastUpdateTs" : 1682332112637,
+      "longValue" : 60000,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}

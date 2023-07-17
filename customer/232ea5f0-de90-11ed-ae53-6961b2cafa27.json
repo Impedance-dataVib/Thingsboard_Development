@@ -1,0 +1,92 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : null,
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : null,
+    "customerId" : null,
+    "email" : "Paikane@gmail.com",
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "name" : "Paikane",
+    "ownerId" : null,
+    "parentCustomerId" : null,
+    "phone" : null,
+    "state" : null,
+    "title" : "Paikane",
+    "zip" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "TENANT",
+      "id" : "9c28c0b0-b106-11ed-a5f7-cdf9aa24320a"
+    },
+    "to" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "8a984570-e34f-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "a9640f10-e288-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "421b84b0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : 42.18884256394211,
+      "jsonValue" : null,
+      "key" : "lat",
+      "lastUpdateTs" : 1682331779260,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 42.46739387512208,
+      "jsonValue" : null,
+      "key" : "long",
+      "lastUpdateTs" : 1682331779260,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

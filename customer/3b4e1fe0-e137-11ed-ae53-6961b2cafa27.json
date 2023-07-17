@@ -1,0 +1,68 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : null,
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : null,
+    "customerId" : null,
+    "email" : "contact@nistantritech.com",
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "3b4e1fe0-e137-11ed-ae53-6961b2cafa27"
+    },
+    "name" : "Nistantri Customer",
+    "ownerId" : null,
+    "parentCustomerId" : null,
+    "phone" : null,
+    "state" : null,
+    "title" : "Nistantri Customer",
+    "zip" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "TENANT",
+      "id" : "9c28c0b0-b106-11ed-a5f7-cdf9aa24320a"
+    },
+    "to" : {
+      "entityType" : "CUSTOMER",
+      "id" : "3b4e1fe0-e137-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "3b4e1fe0-e137-11ed-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "f4f0dc30-e137-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : 22.937527288111045,
+      "jsonValue" : null,
+      "key" : "lat",
+      "lastUpdateTs" : 1682186444808,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 72.56469726562501,
+      "jsonValue" : null,
+      "key" : "long",
+      "lastUpdateTs" : 1682186444808,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

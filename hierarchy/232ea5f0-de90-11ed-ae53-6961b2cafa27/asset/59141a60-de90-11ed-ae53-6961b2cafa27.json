@@ -1,0 +1,118 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "0a5e6cf0-b405-11ed-b907-3bebb3a56b7b"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "59141a60-de90-11ed-ae53-6961b2cafa27"
+    },
+    "label" : "Gas Genset",
+    "name" : "232ea5f0-de90-11ed-ae53-6961b2cafa27_GG",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "232ea5f0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Engine"
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "421b84b0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "59141a60-de90-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "59141a60-de90-11ed-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "77247bd0-de90-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "coreEquipmentConseqAlertsCount",
+      "lastUpdateTs" : 1681897291255,
+      "longValue" : 17,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "mechHealth",
+      "lastUpdateTs" : 1682331083077,
+      "longValue" : 25,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "operatingHealth",
+      "lastUpdateTs" : 1682331083077,
+      "longValue" : 25,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdCritical",
+      "lastUpdateTs" : 1682331083077,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdFuelLoss",
+      "lastUpdateTs" : 1682331083077,
+      "longValue" : 4,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdWarning",
+      "lastUpdateTs" : 1682331083077,
+      "longValue" : 3,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.16698423302610788,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1682331083077,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.24774459339791438,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1682331083077,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

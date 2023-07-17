@@ -1,0 +1,56 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : null,
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : null,
+    "customerId" : null,
+    "email" : "testcustomer@gmail.com",
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "d97f7860-be34-11ed-b907-3bebb3a56b7b"
+    },
+    "name" : "test customer",
+    "ownerId" : null,
+    "parentCustomerId" : null,
+    "phone" : null,
+    "state" : null,
+    "title" : "test customer",
+    "zip" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "TENANT",
+      "id" : "9c28c0b0-b106-11ed-a5f7-cdf9aa24320a"
+    },
+    "to" : {
+      "entityType" : "CUSTOMER",
+      "id" : "d97f7860-be34-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : 19.092017892443767,
+      "jsonValue" : null,
+      "key" : "lat",
+      "lastUpdateTs" : 1678336971657,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 73.01588058122435,
+      "jsonValue" : null,
+      "key" : "long",
+      "lastUpdateTs" : 1678336971657,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

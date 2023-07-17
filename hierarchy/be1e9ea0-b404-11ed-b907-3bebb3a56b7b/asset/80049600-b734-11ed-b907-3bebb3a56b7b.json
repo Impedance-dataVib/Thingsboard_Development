@@ -1,0 +1,110 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "800420d0-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "80049600-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "label" : "GearBox-1",
+    "name" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b_GearBox-1",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Gearbox"
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "80049600-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "9ba3d060-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "f5dc7c90-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "80049600-b734-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "mechHealth",
+      "lastUpdateTs" : 1677567163300,
+      "longValue" : 25,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "operatingHealth",
+      "lastUpdateTs" : 1677567163300,
+      "longValue" : 25,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdCritical",
+      "lastUpdateTs" : 1677567163300,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdFuelLoss",
+      "lastUpdateTs" : 1677567163300,
+      "longValue" : 4,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdWarning",
+      "lastUpdateTs" : 1677567163300,
+      "longValue" : 3,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.23021903641022937,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1677567163300,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.1843343800629339,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1677567163300,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

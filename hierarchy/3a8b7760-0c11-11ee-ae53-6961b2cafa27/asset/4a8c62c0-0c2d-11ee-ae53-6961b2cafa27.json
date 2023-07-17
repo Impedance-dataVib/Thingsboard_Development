@@ -1,0 +1,98 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : null,
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "4a8bed90-0c2d-11ee-ae53-6961b2cafa27"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "3a8b7760-0c11-11ee-ae53-6961b2cafa27"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "4a8c62c0-0c2d-11ee-ae53-6961b2cafa27"
+    },
+    "label" : "newcustomertorque1",
+    "name" : "3a8b7760-0c11-11ee-ae53-6961b2cafa27_newcustomertorque1",
+    "ownerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "3a8b7760-0c11-11ee-ae53-6961b2cafa27"
+    },
+    "type" : "Torque"
+  },
+  "relations" : [ {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "9caa06f0-0c11-11ee-ae53-6961b2cafa27"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "4a8c62c0-0c2d-11ee-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "mechHealth",
+      "lastUpdateTs" : 1686909916093,
+      "longValue" : 25,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "operatingHealth",
+      "lastUpdateTs" : 1686909916093,
+      "longValue" : 25,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdCritical",
+      "lastUpdateTs" : 1686909916093,
+      "longValue" : 5,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdFuelLoss",
+      "lastUpdateTs" : 1686909916093,
+      "longValue" : 4,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "thresholdWarning",
+      "lastUpdateTs" : 1686909916093,
+      "longValue" : 3,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.7328767123287672,
+      "jsonValue" : null,
+      "key" : "xPos",
+      "lastUpdateTs" : 1686909916093,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 0.17164179104477612,
+      "jsonValue" : null,
+      "key" : "yPos",
+      "lastUpdateTs" : 1686909916093,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}

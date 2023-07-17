@@ -1,0 +1,96 @@
+{
+  "entityType" : "CUSTOMER",
+  "entity" : {
+    "additionalInfo" : null,
+    "address" : null,
+    "address2" : null,
+    "city" : null,
+    "country" : null,
+    "customerId" : null,
+    "email" : "dalwadi7dhaval@gmail.com",
+    "externalId" : null,
+    "id" : {
+      "entityType" : "CUSTOMER",
+      "id" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "name" : "Dhaval Dalvadi 2",
+    "ownerId" : null,
+    "parentCustomerId" : null,
+    "phone" : null,
+    "state" : null,
+    "title" : "Dhaval Dalvadi 2",
+    "zip" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "TENANT",
+      "id" : "9c28c0b0-b106-11ed-a5f7-cdf9aa24320a"
+    },
+    "to" : {
+      "entityType" : "CUSTOMER",
+      "id" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "f5dc7c90-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : { },
+    "from" : {
+      "entityType" : "CUSTOMER",
+      "id" : "be1e9ea0-b404-11ed-b907-3bebb3a56b7b"
+    },
+    "to" : {
+      "entityType" : "ASSET",
+      "id" : "46d22a70-cc72-11ed-ae53-6961b2cafa27"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[\"test@gmail.com\",\"dhaval@gmail.com\"]",
+      "key" : "alertEmails",
+      "lastUpdateTs" : 1682328920225,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 23.107819138947672,
+      "jsonValue" : null,
+      "key" : "lat",
+      "lastUpdateTs" : 1679980474212,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 72.46547698974611,
+      "jsonValue" : null,
+      "key" : "long",
+      "lastUpdateTs" : 1679980474212,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "whiteLabelParams",
+      "lastUpdateTs" : 1677574056729,
+      "longValue" : null,
+      "strValue" : "{\"logoImageUrl\":null,\"logoImageChecksum\":null,\"logoImageHeight\":null,\"appTitle\":null,\"favicon\":{\"url\":null,\"type\":null},\"faviconChecksum\":null,\"paletteSettings\":{\"primaryPalette\":null,\"accentPalette\":null},\"helpLinkBaseUrl\":null,\"uiHelpBaseUrl\":null,\"enableHelpLinks\":null,\"whiteLabelingEnabled\":true,\"showNameVersion\":null,\"platformName\":null,\"platformVersion\":null,\"customCss\":\"\"}"
+    } ]
+  }
+}
