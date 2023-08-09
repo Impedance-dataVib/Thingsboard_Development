@@ -58,8 +58,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691399385577,
-                  "endTimeMs" : 1691485785577
+                  "startTimeMs" : 1691499774120,
+                  "endTimeMs" : 1691586174120
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -189,7 +189,7 @@
               "realtime" : {
                 "realtimeType" : 1,
                 "interval" : 1000,
-                "timewindowMs" : 86400000,
+                "timewindowMs" : 60000,
                 "quickInterval" : "CURRENT_DAY"
               },
               "history" : {
@@ -197,8 +197,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691399505736,
-                  "endTimeMs" : 1691485905736
+                  "startTimeMs" : 1691499774121,
+                  "endTimeMs" : 1691586174121
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -311,6 +311,20 @@
             "resolveMultiple" : true,
             "assetType" : "ship",
             "assetNameFilter" : ""
+          }
+        },
+        "fa1dabdb-fa95-6b43-89a6-4756603892c9" : {
+          "id" : "fa1dabdb-fa95-6b43-89a6-4756603892c9",
+          "alias" : "near",
+          "filter" : {
+            "type" : "entityGroup",
+            "resolveMultiple" : true,
+            "groupStateEntity" : false,
+            "stateEntityParamName" : null,
+            "defaultStateGroupType" : null,
+            "defaultStateEntityGroup" : null,
+            "groupType" : "DASHBOARD",
+            "entityGroup" : "e96840e0-2527-11ee-a680-991f61608d67"
           }
         }
       },
