@@ -317,14 +317,10 @@
           "id" : "fa1dabdb-fa95-6b43-89a6-4756603892c9",
           "alias" : "near",
           "filter" : {
-            "type" : "entityGroup",
+            "type" : "entityList",
             "resolveMultiple" : true,
-            "groupStateEntity" : false,
-            "stateEntityParamName" : null,
-            "defaultStateGroupType" : null,
-            "defaultStateEntityGroup" : null,
-            "groupType" : "DASHBOARD",
-            "entityGroup" : "e96840e0-2527-11ee-a680-991f61608d67"
+            "entityType" : "ASSET",
+            "entityList" : [ "3c3b70a0-e138-11ed-ae53-6961b2cafa27" ]
           }
         }
       },
