@@ -3435,19 +3435,6 @@
                 "settings" : { },
                 "_hash" : 0.009778316725597591
               } ]
-            }, {
-              "type" : "entity",
-              "name" : null,
-              "entityAliasId" : "e52842f8-b64a-3003-bf43-bf1446072cd4",
-              "filterId" : null,
-              "dataKeys" : [ {
-                "name" : "Latitude",
-                "type" : "attribute",
-                "label" : "Latitude",
-                "color" : "#4caf50",
-                "settings" : { },
-                "_hash" : 0.477336646539408
-              } ]
             } ],
             "timewindow" : {
               "displayValue" : "",
