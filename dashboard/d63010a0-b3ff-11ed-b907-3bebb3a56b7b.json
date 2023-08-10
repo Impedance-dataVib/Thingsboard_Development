@@ -4474,6 +4474,84 @@
           "row" : 0,
           "col" : 0,
           "id" : "d7b22500-a738-b148-37b0-d8dbc854e8f2"
+        },
+        "9b84fba8-249d-9033-e1ae-caae6e644932" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "entities_table",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 6.5,
+          "config" : {
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 86400000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1691565389758,
+                  "endTimeMs" : 1691651789758
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "NONE",
+                "limit" : 200
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "4px",
+            "settings" : {
+              "entitiesTitle" : "",
+              "enableSearch" : true,
+              "enableSelectColumnDisplay" : true,
+              "enableStickyHeader" : true,
+              "enableStickyAction" : true,
+              "reserveSpaceForHiddenAction" : "true",
+              "displayEntityName" : true,
+              "entityNameColumnTitle" : "",
+              "displayEntityLabel" : false,
+              "displayEntityType" : true,
+              "displayPagination" : true,
+              "defaultPageSize" : 10,
+              "defaultSortOrder" : "entityName",
+              "useRowStyleFunction" : false
+            },
+            "title" : "New Entities table",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400,
+              "padding" : "5px 10px 5px 10px"
+            },
+            "useDashboardTimewindow" : false,
+            "showLegend" : false,
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "f2d0107f-4d07-e411-f62d-2e68ae02b59c",
+              "filterId" : "2608a918-d3e7-8e71-2ecd-fc2f35fe3698",
+              "dataKeys" : [ ]
+            } ],
+            "displayTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "9b84fba8-249d-9033-e1ae-caae6e644932"
         }
       },
       "states" : {
@@ -5238,6 +5316,12 @@
                   "sizeX" : 7,
                   "sizeY" : 3,
                   "row" : 0,
+                  "col" : 0
+                },
+                "9b84fba8-249d-9033-e1ae-caae6e644932" : {
+                  "sizeX" : 7,
+                  "sizeY" : 6,
+                  "row" : 3,
                   "col" : 0
                 }
               },
