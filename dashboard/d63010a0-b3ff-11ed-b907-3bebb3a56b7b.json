@@ -44,8 +44,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709386,
-                  "endTimeMs" : 1691643109386
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -137,8 +137,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709386,
-                  "endTimeMs" : 1691643109386
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -203,8 +203,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -270,8 +270,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -382,8 +382,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -478,8 +478,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -545,8 +545,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -663,8 +663,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -772,8 +772,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -897,8 +897,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -983,8 +983,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1076,8 +1076,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1316,8 +1316,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1438,8 +1438,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1531,8 +1531,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1669,8 +1669,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1843,8 +1843,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1902,8 +1902,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1982,8 +1982,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3028,8 +3028,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3121,8 +3121,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3320,8 +3320,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3463,8 +3463,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3573,8 +3573,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3649,8 +3649,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3886,8 +3886,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3956,8 +3956,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4160,8 +4160,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4374,8 +4374,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691556709387,
-                  "endTimeMs" : 1691643109387
+                  "startTimeMs" : 1691564604961,
+                  "endTimeMs" : 1691651004961
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4409,6 +4409,71 @@
           "row" : 0,
           "col" : 0,
           "id" : "b0ebdffd-855b-6c46-ebd1-3d3d7b5c0593"
+        },
+        "d7b22500-a738-b148-37b0-d8dbc854e8f2" : {
+          "isSystemType" : false,
+          "bundleAlias" : "nt_widgets",
+          "typeAlias" : "total_entity",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "f2d0107f-4d07-e411-f62d-2e68ae02b59c",
+              "filterId" : "2608a918-d3e7-8e71-2ecd-fc2f35fe3698",
+              "dataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1691565276766,
+                  "endTimeMs" : 1691651676766
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 25000
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0",
+            "settings" : {
+              "color" : "#7d75e3",
+              "icon" : "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDEiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MSA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNy40MzA0IDEzLjcyMTRDMjcuNDMwNCAxNy42Mzc1IDI0LjMwODQgMjAuNzc3NyAyMC40MTQ5IDIwLjc3NzdDMTYuNTIxNCAyMC43Nzc3IDEzLjM5OTQgMTcuNjM3NSAxMy4zOTk0IDEzLjcyMTRDMTMuMzk5NCA5LjgwMzc3IDE2LjUyMTQgNi42NjY2NiAyMC40MTQ5IDYuNjY2NjZDMjQuMzA4NCA2LjY2NjY2IDI3LjQzMDQgOS44MDM3NyAyNy40MzA0IDEzLjcyMTRaTTIwLjQxNDkgMzMuMzMzM0MxNC42OTYyIDMzLjMzMzMgOS44MTMzMiAzMi40MjY3IDkuODEzMzIgMjguODAwM0M5LjgxMzMyIDI1LjE3MjMgMTQuNjY0OSAyNC4yMzI3IDIwLjQxNDkgMjQuMjMyN0MyNi4xMzM1IDI0LjIzMjcgMzEuMDE2NSAyNS4xMzkzIDMxLjAxNjUgMjguNzY3MkMzMS4wMTY1IDMyLjM5MzcgMjYuMTY0OSAzMy4zMzMzIDIwLjQxNDkgMzMuMzMzM1pNMzAuNDI4MyAxMy44NDg3QzMwLjQyODMgMTUuODQ1IDI5LjgzMjkgMTcuNzA0OCAyOC43ODgyIDE5LjI1MDhDMjguNjgwOCAxOS40MDk5IDI4Ljc3NjMgMTkuNjI0NiAyOC45NjU4IDE5LjY1NzZDMjkuMjI3IDE5LjcwMjYgMjkuNDk3MSAxOS43MjgyIDI5Ljc3MTcgMTkuNzM1N0MzMi41MTAxIDE5LjgwNzcgMzQuOTY4IDE4LjAzNSAzNS42NDcgMTUuMzY2MkMzNi42NTI5IDExLjQwMiAzMy42OTk1IDcuODQzMTUgMjkuOTM4OCA3Ljg0MzE1QzI5LjUyOTkgNy44NDMxNSAyOS4xMzg5IDcuODg2NjggMjguNzU4NCA3Ljk2NDczQzI4LjcwNjIgNy45NzY3NCAyOC42NTEgOC4wMDA3NiAyOC42MjExIDguMDQ3MjlDMjguNTg1MyA4LjEwNDMzIDI4LjYxMjIgOC4xODA4OCAyOC42NDggOC4yMzA0MUMyOS43Nzc3IDkuODIyOTggMzAuNDI4MyAxMS43NjUzIDMwLjQyODMgMTMuODQ4N1pNMzQuOTYzNSAyMi41MjA5QzM2LjgwMzYgMjIuODgyNyAzOC4wMTM5IDIzLjYyMTIgMzguNTE1MyAyNC42OTQ0QzM4LjkzOTEgMjUuNTc1NSAzOC45MzkxIDI2LjU5NzcgMzguNTE1MyAyNy40NzczQzM3Ljc0ODIgMjkuMTQxOSAzNS4yNzU0IDI5LjY3NjMgMzQuMzE0NCAyOS44MTQ0QzM0LjExNTkgMjkuODQ0NCAzMy45NTYyIDI5LjY3MTggMzMuOTc3MSAyOS40NzIxQzM0LjQ2ODEgMjQuODU5NSAzMC41NjI2IDIyLjY3MjUgMjkuNTUyMyAyMi4xNjk3QzI5LjUwOSAyMi4xNDcyIDI5LjUwMDEgMjIuMTEyNyAyOS41MDQ2IDIyLjA5MTZDMjkuNTA3NiAyMi4wNzY2IDI5LjUyNTUgMjIuMDUyNiAyOS41NTgzIDIyLjA0ODFDMzEuNzQ0NiAyMi4wMDc2IDM0LjA5NSAyMi4zMDc4IDM0Ljk2MzUgMjIuNTIwOVpNMTEuMjI4NCAxOS43MzU1QzExLjUwMjkgMTkuNzI4IDExLjc3MTYgMTkuNzA0IDEyLjAzNDIgMTkuNjU3NUMxMi4yMjM3IDE5LjYyNDQgMTIuMzE5MyAxOS40MDk4IDEyLjIxMTggMTkuMjUwN0MxMS4xNjcyIDE3LjcwNDYgMTAuNTcxNyAxNS44NDQ5IDEwLjU3MTcgMTMuODQ4NUMxMC41NzE3IDExLjc2NTEgMTEuMjIyNCA5LjgyMjgzIDEyLjM1MjEgOC4yMzAyNkMxMi4zODc5IDguMTgwNzMgMTIuNDEzMyA4LjEwNDE3IDEyLjM3ODkgOC4wNDcxNEMxMi4zNDkxIDguMDAyMTEgMTIuMjkyNCA3Ljk3NjU5IDEyLjI0MTcgNy45NjQ1OEMxMS44NTk2IDcuODg2NTMgMTEuNDY4NiA3Ljg0MyAxMS4wNTk3IDcuODQzQzcuMjk5MDMgNy44NDMgNC4zNDU2OSAxMS40MDE5IDUuMzUzMDIgMTUuMzY2MUM2LjAzMjAzIDE4LjAzNDkgOC40ODk5MSAxOS44MDc2IDExLjIyODQgMTkuNzM1NVpNMTEuNDk0NyAyMi4wOTA3QzExLjQ5OTIgMjIuMTEzMyAxMS40OTAzIDIyLjE0NjMgMTEuNDQ4NSAyMi4xNzAzQzEwLjQzNjcgMjIuNjczMSA2LjUzMTIyIDI0Ljg2MDEgNy4wMjIyIDI5LjQ3MTJDNy4wNDMwOSAyOS42NzI0IDYuODg0OSAyOS44NDM1IDYuNjg2NDIgMjkuODE1QzUuNzI1MzYgMjkuNjc2OSAzLjI1MjU1IDI5LjE0MjUgMi40ODU0OSAyNy40Nzc5QzIuMDYwMTcgMjYuNTk2OCAyLjA2MDE3IDI1LjU3NjEgMi40ODU0OSAyNC42OTVDMi45ODY5MiAyMy42MjE4IDQuMTk1NzEgMjIuODgzMyA2LjAzNTc2IDIyLjUyQzYuOTA1OCAyMi4zMDg0IDkuMjU0NzQgMjIuMDA4MiAxMS40NDI1IDIyLjA0ODdDMTEuNDc1MyAyMi4wNTMyIDExLjQ5MTcgMjIuMDc3MiAxMS40OTQ3IDIyLjA5MDdaIiBmaWxsPSIjN0Q3NUUzIi8+Cjwvc3ZnPgo="
+            },
+            "title" : "New Total Entity",
+            "showTitleIcon" : false,
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "enableDataExport" : false,
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "noDataDisplayMessage" : "",
+            "showLegend" : false,
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d7b22500-a738-b148-37b0-d8dbc854e8f2"
         }
       },
       "states" : {
@@ -5195,6 +5260,12 @@
                   "sizeX" : 7,
                   "sizeY" : 3,
                   "row" : 0,
+                  "col" : 0
+                },
+                "d7b22500-a738-b148-37b0-d8dbc854e8f2" : {
+                  "sizeX" : 7,
+                  "sizeY" : 3,
+                  "row" : 3,
                   "col" : 0
                 }
               },
