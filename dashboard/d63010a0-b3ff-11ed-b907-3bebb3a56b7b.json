@@ -44,8 +44,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305604,
+                  "endTimeMs" : 1691642705604
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -137,8 +137,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -203,8 +203,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -270,8 +270,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -308,7 +308,7 @@
             "pageSize" : 1024,
             "actions" : {
               "elementClick" : [ {
-                "name" : "filterButton",
+                "name" : "filtersButton",
                 "icon" : "more_horiz",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
@@ -382,8 +382,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -478,8 +478,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -545,8 +545,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -663,8 +663,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -772,8 +772,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -897,8 +897,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -983,8 +983,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1076,8 +1076,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1316,8 +1316,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1438,8 +1438,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1531,8 +1531,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1669,8 +1669,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1843,8 +1843,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1902,8 +1902,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -1982,8 +1982,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3028,8 +3028,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3121,8 +3121,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3320,8 +3320,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3463,8 +3463,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3573,8 +3573,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3649,8 +3649,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3886,8 +3886,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -3956,8 +3956,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4160,8 +4160,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
@@ -4374,8 +4374,8 @@
                 "interval" : 1000,
                 "timewindowMs" : 60000,
                 "fixedTimewindow" : {
-                  "startTimeMs" : 1691500153316,
-                  "endTimeMs" : 1691586553316
+                  "startTimeMs" : 1691556305605,
+                  "endTimeMs" : 1691642705605
                 },
                 "quickInterval" : "CURRENT_DAY"
               },
